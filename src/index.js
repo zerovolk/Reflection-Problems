@@ -1,27 +1,10 @@
 import { createRoot } from 'react-dom/client';
-
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App';
-import ErrorPage from './Components/ErrorPage.jsx';
-import Problem from './routes/Problem';
-import Root from './routes/Root';
+import './index.css';
 
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Root />,
-        errorElement: <ErrorPage />,
-        children: [
-            {
-                path: 'areYouPlayingBanjo',
-                element: <Problem />
-            }
-        ]
-    }
-])
+const root = document.getElementById('root')
+if (!root) throw new Error("Root element not found")
 
-const root = createRoot(document.getElementById('root'))
-
-root.render(
-    <RouterProvider router={router} />
+createRoot(root).render(
+    <App />
 )
