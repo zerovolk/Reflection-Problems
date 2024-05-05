@@ -1,10 +1,9 @@
 import CodeBlock from '@/Components/CodeBlock';
 import { Col, Row } from 'antd';
 import { Content } from 'antd/es/layout/layout';
-import ConsoleBlock from './ConsoleBlock';
 import ExplanationBlock from './ExplanationBlock';
 
-const MyMain = ({script, description, explanation}) => {
+const MyMain = ({script, description, explanation, children}) => {
     return (
         <Content
             style={{
@@ -15,15 +14,16 @@ const MyMain = ({script, description, explanation}) => {
             <h1>{script?.name}</h1>
             <Row gutter={[16,24]}>
                 <Col span={12}>
-                    <ConsoleBlock script={script}/>
+                    {children}
                 </Col>
                 <Col 
                     span={12}
                     >
                     <ExplanationBlock 
                         title={"Описание"}
-                        description={description}
-                    />
+                    >
+                        {description}
+                    </ExplanationBlock>
                 </Col>
             </Row>
             <Row gutter={[16,24]}>
@@ -33,8 +33,9 @@ const MyMain = ({script, description, explanation}) => {
                 <Col span={12}>
                     <ExplanationBlock 
                         title={"Решение"}
-                        description={explanation}
-                    />
+                    >
+                        {explanation}
+                    </ExplanationBlock>
                 </Col>
             </Row>
         </Content>

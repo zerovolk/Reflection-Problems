@@ -1,6 +1,5 @@
 
-const ExplanationBlock = ({title, description, ...props}) => {
-
+const ExplanationBlock = ({title, children}) => {
     return (
         <div
             style={{
@@ -16,7 +15,7 @@ const ExplanationBlock = ({title, description, ...props}) => {
             >
                 {title}
             </h3>
-            <p>{description}</p>
+            {children}
         </div>
     )
 }

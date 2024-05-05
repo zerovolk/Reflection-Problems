@@ -1,16 +1,16 @@
-import { areYouPlayingBanjo } from '@/problems/areYouPlayingBanjo';
-import { Button, Input } from 'antd';
-import { useEffect, useState } from 'react';
+import { useInput } from '@/hooks/useInput';
+import { Input } from 'antd';
+import { useState } from 'react';
 
 
 const ConsoleBlock = ({script}) => {
 
-    const [value, setValue] = useState('')
     const [arrayLines, setArrayLines] = useState([])
+    const consoleInput = useInput('')
 
     const addingItems = () => {
-        setArrayLines([...arrayLines, script(value)])
-        setValue('')
+        setArrayLines([...arrayLines, script(consoleInput.value)])
+        consoleInput.clear(true)
     }
 
     const lines = arrayLines.map(p => <p>{p}</p>)
@@ -21,10 +21,8 @@ const ConsoleBlock = ({script}) => {
                 padding: 0
             }}
         >
-            {/* <Button onClick={btn}>Обновить</Button> */}
             <Input 
-                value={value} 
-                onChange={e => setValue(e.target.value)} 
+                {...consoleInput}
                 onPressEnter={addingItems}/>
             <h3>
                     return: 

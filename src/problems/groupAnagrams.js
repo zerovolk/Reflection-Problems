@@ -1,15 +1,15 @@
 // in ["eat","tea","tan","ate","nat","bat"]
 // out [["bat"],["nat","tan"],["ate","eat","tea"]]
-export const groupAnagrams = function(strs) {
+export const groupAnagrams = function(wordsArray) {
     const hash = {}
 
-    for (let i = 0; i < strs.length; i++) {
-        const sortedStr = strs[i].split("").sort().join("")
+    for (let i = 0; i < wordsArray.length; i++) {
+        const sortedStr = wordsArray[i].split("").sort().join("")
 
         if (!hash[sortedStr]) {
-            hash[sortedStr] = [strs[i]]
+            hash[sortedStr] = [wordsArray[i]]
         } else {
-            hash[sortedStr].push(strs[i])
+            hash[sortedStr].push(wordsArray[i])
         }
     }
 

@@ -3,18 +3,18 @@ import { topKFrequent } from "../problems/topKFrequent"
 
 const TopKFrequent = () => {
 
-    const explanation = "Решение заключается в том..."
+    const description = <div>expls</div>
 
-    const description = "Описание к topKFrequent"
+    const explanation = <div>descr</div>
 
     return (
-        <>
             <MyMain
                 description={description}
                 explanation={explanation}
                 script={topKFrequent}
-            />
-        </>
+            >
+
+            </MyMain>
     )
 }
 
