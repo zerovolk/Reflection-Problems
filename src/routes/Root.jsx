@@ -1,10 +1,12 @@
 import MyFooter from '@/Components/MyFooter';
 import MySideMenu from '@/Components/MySideMenu';
 import { Layout } from 'antd';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useHref } from 'react-router-dom';
 
 
 const Root = () => {
+
+    const isRoot = useHref() === '/'
 
     return (
         <div>
@@ -15,7 +17,12 @@ const Root = () => {
                         marginLeft: 200,
                     }}
                 >
-                    <Outlet/>
+                    {isRoot ? <div style={{
+                        textAlign: 'center',
+                        margin: 50
+                    }}>
+                        Выберете задачу, слева в меню
+                    </div> : <Outlet/>}
                     <MyFooter />
                 </Layout>
             </Layout>

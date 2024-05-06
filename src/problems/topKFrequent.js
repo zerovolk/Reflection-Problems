@@ -9,8 +9,7 @@ export const topKFrequent = function(nums, k) {
     for (let [key, value] of map) {
         result.push([key, value])
     }
-    console.log(result)
     result.sort((a, b) => b[1] - a[1])
-    console.log(result)
+    console.log(result.slice(0, k).map((x) => x[0]))
     return result.slice(0, k).map((x) => x[0])
 };

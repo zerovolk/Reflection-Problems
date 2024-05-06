@@ -2,7 +2,6 @@ import MyMain from "@/Components/MyMain"
 import { groupAnagrams } from "@/problems/groupAnagrams"
 import { Button, Select } from "antd"
 import { useState } from "react"
-import { useInput } from "../hooks/useInput"
 
 const GroupAnagrams = () => {
 
@@ -31,24 +30,14 @@ const GroupAnagrams = () => {
             </ol>
         </div>
 
-    // const arraysInput = []
-    // for (let i = 10; i < 36; i++) {
-    //     arraysInput.push({
-    //         value: i.toString(36) + i,
-    //         label: i.toString(36) + i
-    //     })
-    // }
-
     const [tag, setTag] = useState([])
     const [consoleLines, setConsoleLines] = useState([])
     const addingLine = () => {
-        console.log(tag[0])
         setConsoleLines([...consoleLines, groupAnagrams(tag[0])])
-        setTag([])
     }
-    // [["bat"],["nat","tan"],["ate","eat","tea"]]
     const lines = consoleLines.map((consoleLine, index) => {
-        return <p key={index+1}>{`[${consoleLine.map(arr => `[${arr}]`)}]`}</p>
+        return <p key={index+1}>{`[${consoleLine.map(arr => `\n[${arr}]`)}]`}</p>
+        // out [["bat"],["nat","tan"],["ate","eat","tea"]]
     })
 
     const addTag = (word) => {
@@ -62,16 +51,21 @@ const GroupAnagrams = () => {
             script={groupAnagrams}
         >
             <div>
-                <Select 
-                    mode="tags"
-                    style={{
-                        width: '100%'
-                    }}
-                    options={tag}
-                    onChange={addTag}
-                    open={false}
-                />
-                <Button onClick={addingLine}>Start</Button>
+                <div style={{
+                    display: 'flex',
+                    flexWrap: 'nowrap'
+                }}>
+                    <Select 
+                        mode="tags"
+                        style={{
+                            width: '100%'
+                        }}
+                        options={tag}
+                        onChange={addTag}
+                        open={false}
+                    />
+                    <Button onClick={addingLine}>Start</Button>
+                </div>
                 <div>
                     <h3>
                         Return:
