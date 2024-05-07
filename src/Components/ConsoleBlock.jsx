@@ -10,7 +10,7 @@ const ConsoleBlock = ({script}) => {
 
     const addingItems = () => {
         setArrayLines([...arrayLines, script(consoleInput.value)])
-        consoleInput.clear(true)
+        consoleInput.clearInput()
     }
 
     const lines = arrayLines.map(p => <p>{p}</p>)
@@ -22,7 +22,8 @@ const ConsoleBlock = ({script}) => {
             }}
         >
             <Input 
-                {...consoleInput}
+                value={consoleInput.value}
+                onChange={consoleInput.onChange}
                 onPressEnter={addingItems}/>
             <h3>
                     return: 

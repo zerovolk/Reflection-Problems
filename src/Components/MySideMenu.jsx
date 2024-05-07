@@ -1,10 +1,11 @@
 import { Menu } from 'antd';
 import Sider from "antd/es/layout/Sider";
-import { useNavigate } from 'react-router-dom';
+import { useHref, useNavigate } from 'react-router-dom';
 
 const MySideMenu = () => {
 
     let navigate = useNavigate()
+    let choosed = useHref().slice(1)
 
     const problems = [
         'areYouPlayingBanjo',
@@ -35,6 +36,7 @@ const MySideMenu = () => {
                 mode="inline" 
                 items={problems} 
                 onSelect={linkTo}
+                selectedKeys={choosed}
             />
         </Sider>
     )

@@ -3,16 +3,18 @@ import { useState } from "react"
 export function useInput(initialValue) {
     const [value, setValue] = useState(initialValue)
 
-    const onChange = (event) => {
+    const handleChange = (event) => {
         setValue(event.target.value)
     }
-    const clear = (state) => {
-        if (state) {
-            setValue('')
-        }
+
+    const clearInput = () => {
+        setValue('')
     }
+    
 
     return {
-        value, onChange, clear
+        value, 
+        onChange: handleChange, 
+        clearInput
     }
 }
