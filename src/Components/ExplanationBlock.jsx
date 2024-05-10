@@ -1,5 +1,5 @@
 
-const ExplanationBlock = ({title, children}) => {
+const ExplanationBlock = ({ children}) => {
     return (
         <div
             style={{
@@ -7,14 +7,6 @@ const ExplanationBlock = ({title, children}) => {
                 
             }}
         >
-            <h3
-                style={{
-                    marginTop: 0,
-                    padding: 0
-                }}
-            >
-                {title}
-            </h3>
             {children}
         </div>
     )

@@ -11,11 +11,6 @@ const CodeBlock = ({script}) => {
                 
             }}
         >
-            <h3 style={{
-                    margin: 0,
-                    padding: 0
-                }}
-            >Код</h3>
             <Highlight className={javascript}>
                 {`${script}`}
             </Highlight>

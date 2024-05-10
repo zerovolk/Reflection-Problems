@@ -28,15 +28,16 @@ const ConsoleBlock = ({script}) => {
             <h3>
                     return: 
             </h3>
-            <div style={{
-                borderRadius: '5%',
-                border: '1px solid white',
-                marginTop: 10,
-                backgroundColor: 'white',
-                padding: 10,
-                height: 300,
-                overflow: 'auto'
-            }}>
+            <div 
+                style={{
+                    borderRadius: '5%',
+                    border: '1px solid black',
+                    marginTop: 10,
+                    backgroundColor: 'ButtonFace',
+                    padding: 10,
+                    height: 220,
+                    overflow: 'auto'
+                }}>
                 {lines}
             </div>
         </div>

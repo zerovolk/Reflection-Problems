@@ -69,11 +69,11 @@ const TopKFrequent = () => {
                         <div
                             style={{
                                 borderRadius: '5%',
-                                border: '1px solid white',
+                                border: '1px solid black',
                                 marginTop: 10,
-                                backgroundColor: 'white',
+                                backgroundColor: 'ButtonFace',
                                 padding: 10,
-                                height: 300,
+                                height: 220,
                                 overflow: 'auto'
                             }}
                         >
