@@ -10,7 +10,7 @@ const MySideMenu = () => {
     const problems = [
         'areYouPlayingBanjo',
         'groupAnagrams',
-        'topKFrequent'
+        'flattenDeeplyNestedArray'
     ].map((item) => ({
         key: item,
         label: item

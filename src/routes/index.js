@@ -1,8 +1,8 @@
 import ErrorPage from '@/Components/ErrorPage';
 import Root from '@/routes/Root';
 import { createBrowserRouter } from 'react-router-dom';
+import FlattenDeeplyNestedArray from './FlattenDeeplyNestedArray';
 import GroupAnagrams from './GroupAnagrams';
-import TopKFrequent from './TopKFrequent';
 import AreYouPlayingBanjo from './areYouPlayingBanjo';
 
 
@@ -21,9 +21,9 @@ export const router = createBrowserRouter([
                 element: <GroupAnagrams />
             },
             {
-                path: 'topKFrequent',
-                element: <TopKFrequent />
-            },
+                path: 'flattenDeeplyNestedArray',
+                element: <FlattenDeeplyNestedArray />
+            }
         ]
     }
 ])

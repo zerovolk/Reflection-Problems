@@ -21,6 +21,9 @@ const ConsoleBlock = ({script}) => {
                 padding: 0
             }}
         >
+            <h3>
+                    input: 
+            </h3>
             <Input 
                 value={consoleInput.value}
                 onChange={consoleInput.onChange}
